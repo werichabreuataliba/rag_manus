@@ -5,7 +5,7 @@ load_dotenv("config.env")
 
 groq_api_key = os.getenv("LLM_ALURA")
 manus_api_key = os.getenv("MANUS_API_KEY")
-chave_secreta_manus = os.getenv('minha-chave-secreta')
+chave_secreta_manus = os.getenv('minha_chave_secreta')
 usuario_rag_manus = os.getenv('usuario_rag_manus')
 senha_manus = os.getenv('senha_manus')
 PDF_PATH = os.getenv("PDF_PATH")
