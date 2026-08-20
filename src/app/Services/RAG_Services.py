@@ -6,7 +6,7 @@ from langchain_groq import ChatGroq
 import requests
 import time
 import json
-from src.app.HELPERS.Chaves import groq_api_key, manus_api_key, PDF_PATH
+from src.app.HELPERS.Chaves import groq_api_key, manus_api_key, PDF_PATH, URL_MANUS_LIST, URL_MANU_CREATE
 
 def carregar_dados():
   pdf_path = PDF_PATH#"base_conhecimento_producao_industrial.pdf"
@@ -144,7 +144,7 @@ def carregar_consulta(dados_producao, retriever):
 
 def aguardar_resultado(task_id, api_key, intervalo=3):
 
-    url = "https://api.manus.ai/v2/task.listMessages"
+    url = URL_MANUS_LIST
 
     while True:
 
@@ -236,7 +236,7 @@ def analisar_manus(dados_producao, retriever):
   Responda de forma objetiva.
   """
 
-  url = "https://api.manus.ai/v2/task.create"
+  url = URL_MANU_CREATE
 
   headers = {
       "Content-Type": "application/json",
