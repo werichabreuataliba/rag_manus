@@ -144,8 +144,7 @@ def carregar_consulta(dados_producao, retriever):
 
 def aguardar_resultado(task_id, api_key, intervalo=3):
 
-    url = URL_MANUS_LIST
-
+    url = "https://api.manus.ai/v2/task.listMessages"#URL_MANUS_LIST
     while True:
 
         response = requests.get(
@@ -236,7 +235,7 @@ def analisar_manus(dados_producao, retriever):
   Responda de forma objetiva.
   """
 
-  url = URL_MANUS_CREATE
+  url = "https://api.manus.ai/v2/task.create"#URL_MANUS_CREATE
 
   headers = {
       "Content-Type": "application/json",
