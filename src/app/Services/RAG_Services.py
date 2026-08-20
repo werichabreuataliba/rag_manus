@@ -6,7 +6,7 @@ from langchain_groq import ChatGroq
 import requests
 import time
 import json
-from src.app.HELPERS.Chaves import groq_api_key, manus_api_key, PDF_PATH, URL_MANUS_LIST, URL_MANU_CREATE
+from src.app.HELPERS.Chaves import groq_api_key, manus_api_key, PDF_PATH, URL_MANUS_LIST, URL_MANUS_CREATE
 
 def carregar_dados():
   pdf_path = PDF_PATH#"base_conhecimento_producao_industrial.pdf"
@@ -236,7 +236,7 @@ def analisar_manus(dados_producao, retriever):
   Responda de forma objetiva.
   """
 
-  url = URL_MANU_CREATE
+  url = URL_MANUS_CREATE
 
   headers = {
       "Content-Type": "application/json",
